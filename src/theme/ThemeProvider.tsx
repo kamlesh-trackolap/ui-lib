@@ -45,7 +45,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [theme, mounted]);
 
 
-
   const setTheme = (newTheme: ThemeType) => {
     setThemeState(newTheme);
   };
@@ -62,7 +61,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {children}
+      {mounted ? children : null}
     </ThemeContext.Provider>
   );
 };
